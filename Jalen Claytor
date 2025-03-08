@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .project-card {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        a, .download-btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover, .download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function updateProject() {
+            const projects = {
+                Excel: { name: "Excel Data Analysis", link: "https://onedrive.live.com/download?resid=E0D23CDB80B9E42A!sc0ff6e500a2b46db82ba2cecd1289d25", description: "Excel Project" },
+                Tableau: { name: "Tableau Dashboard", link: "https://public.tableau.com/app/profile/jalen.claytor/viz/TableauProject_JalenClaytor/Story1", description: "Tableau Project." },
+                Python: { name: "Python Data Project", link: "https://github.com/BluBaron007/PythonProject_JalenC", description: "Python Project" },
+                SQL: { name: "SQL Analysis Project", link: "https://drive.google.com/file/d/1DRPHDqYzYCKWqg_2aUn3sb_I8qUHTZyd/view?usp=sharing", description: "SQL Project" }
+            };
+            const selectedProject = document.getElementById("projectSelect").value;
+            document.getElementById("projectTitle").innerHTML = `<a href="${projects[selectedProject].link}" target="_blank">${projects[selectedProject].name}</a>`;
+            document.getElementById("projectDesc").innerText = projects[selectedProject].description;
+            
+            const downloadBtn = document.getElementById("downloadBtn");
+            if (selectedProject === "Excel") {
+                downloadBtn.style.display = "block";
+                downloadBtn.href = projects[selectedProject].link;
+            } else {
+                downloadBtn.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Analyst Portfolio</h1>
+        <select id="projectSelect" onchange="updateProject()">
+            <option value="Excel">Excel</option>
+            <option value="Tableau">Tableau</option>
+            <option value="Python">Python</option>
+            <option value="SQL">SQL</option>
+        </select>
+        <div class="project-card">
+            <h2 id="projectTitle"><a href="https://onedrive.live.com/download?resid=E0D23CDB80B9E42A!sc0ff6e500a2b46db82ba2cecd1289d25" target="_blank">Excel Data Analysis</a></h2>
+            <p id="projectDesc">Excel Project</p>
+            <a id="downloadBtn" href="https://onedrive.live.com/download?resid=E0D23CDB80B9E42A!sc0ff6e500a2b46db82ba2cecd1289d25" class="download-btn" target="_blank" download>Download Excel File</a>
+        </div>
+    </div>
+</body>
+</html>
