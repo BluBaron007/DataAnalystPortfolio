@@ -6,49 +6,56 @@
     <title>Data Analyst Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #f0f0f0;
         }
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            max-width: 420px;
             text-align: center;
+            backdrop-filter: blur(10px);
         }
         select {
             width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            outline: none;
         }
         .project-card {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
         a, .download-btn {
             display: inline-block;
-            background-color: #007BFF;
+            background: #007acc;
             color: white;
-            padding: 10px 15px;
-            margin-top: 10px;
-            border-radius: 5px;
+            padding: 12px 18px;
+            margin-top: 15px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
+            transition: background 0.3s ease;
         }
         a:hover, .download-btn:hover {
-            background-color: #0056b3;
+            background: #005999;
         }
     </style>
     <script>
@@ -75,7 +82,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Data Analyst Portfolio</h1>
+        <h1>📊 Data Analyst Portfolio</h1>
         <select id="projectSelect" onchange="updateProject()">
             <option value="Excel">Excel</option>
             <option value="Tableau">Tableau</option>
@@ -85,7 +92,7 @@
         <div class="project-card">
             <h2 id="projectTitle"><a href="https://onedrive.live.com/download?resid=E0D23CDB80B9E42A!sc0ff6e500a2b46db82ba2cecd1289d25" target="_blank">Excel Data Analysis</a></h2>
             <p id="projectDesc">Excel Project</p>
-            <a id="downloadBtn" href="https://onedrive.live.com/download?resid=E0D23CDB80B9E42A!sc0ff6e500a2b46db82ba2cecd1289d25" class="download-btn" target="_blank" download>Download Excel File</a>
+            <a id="downloadBtn" href="https://onedrive.live.com/download?resid=E0D23CDB80B9E42A!sc0ff6e500a2b46db82ba2cecd1289d25" class="download-btn" target="_blank" download>📥 Download Excel File</a>
         </div>
     </div>
 </body>
